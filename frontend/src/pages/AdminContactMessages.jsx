@@ -8,7 +8,9 @@ function AdminContactMessages() {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await fetch('http://localhost:4000/contactus/getcontactus');
+        // const res = await fetch('http://localhost:4000/contactus/getcontactus');
+        const res = await fetch(`${import.meta.env.VITE_BASE_URL}/contactus/getcontactus`);
+
         const data = await res.json();
         const sortedMessages = data.data.sort((a, b) => new Date(b.sendAt) - new Date(a.sendAt));
         setMessages(sortedMessages);

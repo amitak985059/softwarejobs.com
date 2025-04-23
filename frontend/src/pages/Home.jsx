@@ -8,7 +8,9 @@ const Home = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch('http://localhost:4000/jobs/getjobs');
+        // const res = await fetch('http://localhost:4000/jobs/getjobs');
+        const res = await fetch(`${import.meta.env.VITE_BASE_URL}/jobs/getjobs`);
+
         const data = await res.json();
         setJobs(data.data);
         setLoading(false);

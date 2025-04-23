@@ -15,7 +15,8 @@ const CreateJob = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/jobs/createjob', {
+            axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+            const response = await axios.post('/jobs/createjob', {
                 company,
                 jobTitle,
                 jobDescription,

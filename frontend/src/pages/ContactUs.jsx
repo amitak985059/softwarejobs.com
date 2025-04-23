@@ -11,7 +11,9 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:4000/contactus', {
+      axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+
+      await axios.post('/contactus', {
         name,
         email,
         subject,
