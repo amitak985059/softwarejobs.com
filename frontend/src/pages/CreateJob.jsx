@@ -15,8 +15,8 @@ const CreateJob = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
-            const response = await axios.post('/jobs/createjob', {
+            //axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+            const response = await axios.post('https://softwarejobs-com.onrender.com/jobs/createjob', {
                 company,
                 jobTitle,
                 jobDescription,
