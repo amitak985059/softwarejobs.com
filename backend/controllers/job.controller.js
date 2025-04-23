@@ -26,3 +26,11 @@ module.exports.createJob = async (req, res) => {
         res.status(400).json({ success: false, error: error.message });
     }
 }
+module.exports.getJobs = async (req, res) => {
+    try {
+        const jobs = await jobModel.find();
+        res.status(200).json({ success: true, data: jobs });
+    } catch (error) {
+        res.status(400).json({ success: false, error: error.message });
+    }
+}
