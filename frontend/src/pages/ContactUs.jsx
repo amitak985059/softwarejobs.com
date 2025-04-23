@@ -11,9 +11,9 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+     // axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
-      await axios.post('/contactus', {
+      await axios.post('https://softwarejobs-com.onrender.com/contactus', {
         name,
         email,
         subject,
