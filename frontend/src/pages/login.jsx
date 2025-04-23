@@ -10,9 +10,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+      //axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
-      const res = await axios.post('/users/login', { email, password });
+      const res = await axios.post('https://softwarejobs-com.onrender.com/users/login', { email, password });
       console.log(res.data);
       localStorage.setItem('token', res.data.token);
       navigate('/createJob');
