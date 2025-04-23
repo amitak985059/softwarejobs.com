@@ -34,7 +34,13 @@ module.exports.loginUser = async (req, res) => {
         }
 
         const token = await user.generateAuthToken();
-        res.cookie('authToken', token, { httpOnly: true });
+        // res.cookie('authToken', token, { httpOnly: true });
+        res.cookie('authToken', token, {
+            httpOnly: true,
+            maxAge: 2 * 60 * 60 * 1000, // 2 hours in milliseconds
+            secure: process.env.NODE_ENV === 'production', // only use secure cookies in production
+            sameSite: 'strict', // helps mitigate CSRF
+          });
         res.status(200).json({ success: true, data: user });
     } catch (error) {
         res.status(400).json({ success: false, error: error.message });

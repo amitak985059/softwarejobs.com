@@ -4,7 +4,7 @@ const Home = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
+// we did this
   useEffect(() => {
     const fetchJobs = async () => {
       try {
