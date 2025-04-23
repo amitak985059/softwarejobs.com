@@ -7,6 +7,7 @@ import CreateJob from './pages/CreateJob'
 import PrivateRoute from './pages/PrivateRoute'  // Import the PrivateRoute component
 import Navbar from './pages/Navbar'
 import About from './pages/About'
+import ContactUs from './pages/ContactUs'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           }
         />
         <Route path="/about" element={<About />} />
+        <Route path='/contactus' element={<ContactUs />} />
 
       </Routes>
 

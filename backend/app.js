@@ -24,4 +24,7 @@ app.use('/users', userRoutes);
 const jobRoutes = require('./routes/job.routes');
 app.use('/jobs', jobRoutes);
 
+const contactRoutes = require('./routes/contact.routes');
+app.use('/contactus', contactRoutes);
+
 module.exports = app;
