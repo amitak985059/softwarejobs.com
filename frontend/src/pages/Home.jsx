@@ -9,7 +9,7 @@ const Home = () => {
     const fetchJobs = async () => {
       try {
         // const res = await fetch('http://localhost:4000/jobs/getjobs');
-        const res = await fetch(`${import.meta.env.VITE_BASE_URL}/jobs/getjobs`);
+        const res = await fetch(`https://softwarejobs-com.onrender.com/jobs/getjobs`);
 
         const data = await res.json();
         setJobs(data.data);
